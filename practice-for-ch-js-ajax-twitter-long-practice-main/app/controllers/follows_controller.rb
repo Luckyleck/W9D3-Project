@@ -8,6 +8,7 @@ class FollowsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to request.referrer }
+      format.json { redirect_to request.referrer }
     end
   end
 
@@ -24,6 +25,8 @@ class FollowsController < ApplicationController
       # `DELETE`.
       # See https://api.rubyonrails.org/classes/ActionController/Redirecting.html#method-i-redirect_to
       format.html { redirect_to request.referrer, status: :see_other }
+      format.json { redirect_to request.referrer, status: :see_other }
+      
     end
   end
 end

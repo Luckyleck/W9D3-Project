@@ -15,7 +15,10 @@ export function followUser(id) {
 
   customFetch(`/users/${id}/follow`, {
     method: "POST",
-    credentials: 'include'
+    credentials: 'include',
+    headers: { 
+      "Content-Type": "application/json",
+      "Accept": "application/json"}
   })
 }
 
@@ -25,8 +28,10 @@ export function unfollowUser(id) {
 
   customFetch(`/users/${id}/follow`, {
     method: "DELETE",
-    credentials: 'include'
-
+  credentials: 'include',
+    headers: { 
+      "Content-Type": "application/json",
+      "Accept": "application/json"}
   })
 }
 

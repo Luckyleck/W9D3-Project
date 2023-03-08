@@ -10,4 +10,10 @@ Rails.application.routes.draw do
   end
 
   root to: redirect("/feed")
+
+  # defaults format: :json do
+  #   resources :follow
+  # end
+
+
 end
