@@ -2,24 +2,43 @@ import { API, broadcast } from "./util";
 
 export default class FollowToggle {
   constructor(toggleButton) {
-    // Your code here
+    this.toggleButton = toggleButton
+    this.toggleButton.addEventListener('click', this.handleClick.bind(this))
   }
 
   async handleClick(event) {
-    // Your code here
+    event.preventDefault()
+    console.log(this.followState)
+// How can we just console.log the data-follow-state?, above prints out a lot
+
+    if(this.followState === 'Followed') {
+      this.unfollow()
+    }else{
+      this.follow()
+    }
+
   }
 
   async follow() {
-    // Your code here
+    this.followState = 'Followed'
+    // this.render()
+    // this.followState('Followed')
   }
 
   async unfollow() {
-    // Your code here
+    this.followState = 'Unfollowed'
+    // this.render()
+    // this.followState('Unfollowed')
   }
 
   render() {
     switch (this.followState) {
-      // Your code here
+      case 'Followed':
+        
+        break
+      case 'Unfollowed':
+
+        break
     }
   }
 
