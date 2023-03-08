@@ -17,7 +17,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "postinstall": "npm run build && npm run build:css",
-    "watch": "webpack --mode=development --watch",
+    "start": "webpack --watch --mode=development",
     "build:css": "sass ./app/assets/stylesheets/application.scss ./app/assets/builds/application.css --no-source-map --load-path=node_modules"
   }
 }

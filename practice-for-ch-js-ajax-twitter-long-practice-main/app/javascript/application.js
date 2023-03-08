@@ -9,8 +9,8 @@ import { API } from "./util";
 if (process.env.NODE_ENV !== "production") {
   window.API = API;
 }
-
-let followToggleSelector = "";
+debugger;
+let followToggleSelector = document.getElementsByClassName("follow-toggle"); 
 let infiniteTweetsSelector = "";
 let usersSearchSelector = "";
 let tweetComposeSelector = "";
@@ -18,7 +18,10 @@ let followersSelector = "";
 
 
 document.querySelectorAll(followToggleSelector).forEach((el) => {
+  debugger
+  console.log("hi")
   new FollowToggle(el);
+  console.log(el)
 });
 
 document.querySelectorAll(infiniteTweetsSelector).forEach((el) => {

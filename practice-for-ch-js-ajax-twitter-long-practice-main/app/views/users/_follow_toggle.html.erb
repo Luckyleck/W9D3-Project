@@ -1,4 +1,4 @@
-<% is_following = current_user.follows?(user) %>
+<% is_following = current_user.follows?(user) %> <!--- boolean -->
 
 <form action="<%= user_follow_url(user) %>" method="POST">
   <%= render "shared/auth_token" %>
@@ -9,6 +9,8 @@
   
   <button
     class="follow-toggle"
+    data-user-id="<%= current_user.id%>"
+    data-follow-state="<%=is_following ? "Followed" : "Unfolllowed"%>"
   >
     <%= is_following ? "Unfollow!" : "Follow!" %>
   </button>
