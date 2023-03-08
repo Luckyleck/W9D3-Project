@@ -3,7 +3,7 @@ const csrfToken = document.querySelector("meta[name=csrf-token]").content;
 
 async function customFetch(url, options = {}) {
   options.headers = {
-    // Your code here
+    "X-CSRF-Token" : csrfToken,
     ...options.headers
   };
 
@@ -11,35 +11,21 @@ async function customFetch(url, options = {}) {
 }
 
 
-
-function followUser(id) {
-
-  const newFollowState = {content: "Followed"}
+export function followUser(id) {
 
   customFetch(`/users/${id}/follow`, {
     method: "POST",
-    body: JSON.stringify(newFollowState),
-    credentials: 'include',
-    headers: {
-      "Content-Type" : "application/json",
-      "Accept" : "application/json"
-    }
+    credentials: 'include'
   })
 }
 
 
-function unfollowUser(id) {
+export function unfollowUser(id) {
 
-  const newFollowState = {content: "Unfollowed"}
 
   customFetch(`/users/${id}/follow`, {
     method: "DELETE",
-    body: JSON.stringify(newFollowState),
-    credentials: 'include',
-    headers: {
-      "Content-Type" : "application/json",
-      "Accept" : "application/json"
-    }
+    credentials: 'include'
 
   })
 }

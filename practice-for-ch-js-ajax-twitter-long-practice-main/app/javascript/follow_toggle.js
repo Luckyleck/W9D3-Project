@@ -32,14 +32,15 @@ export default class FollowToggle {
   }
 
   render() {
-    switch (this.followState) {
-      case 'Followed':
+    console.log('render')
+    // switch (this.followState) {
+    //   case 'Followed':
         
-        break
-      case 'Unfollowed':
+    //     break
+    //   case 'Unfollowed':
 
-        break
-    }
+    //     break
+    // }
   }
 
   get followState() {
